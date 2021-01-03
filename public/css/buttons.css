@@ -1,0 +1,19 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vh;
+    width: 45vh;
+}
+
+.login-options {
+    display: flex;
+    justify-content: center;
+    width: 45vh;
+    font-size: 18px;
+}
+
+hr {
+    display: inline-block;
+    width: 45vh;
+}

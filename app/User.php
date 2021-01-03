@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @method static create(array $array)
+ * @method static firstOrCreate(array $array, array $array1)
  */
 class User extends Authenticatable
 {
@@ -19,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username', 'status',
+        'name', 'email', 'password', 'username', 'status', 'provider', 'provider_id',
     ];
 
     /**

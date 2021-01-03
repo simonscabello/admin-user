@@ -58,10 +58,27 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-sm btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                <span class="login-options">or</span>
+                                <hr>
+
+                                <a class="btn btn-social btn-github" href="{{ route('social.login', ['provider' => 'github']) }}">
+                                    <i class="fa fa-github"><img src="{{asset('icons/github.png')}}" alt="#"></i>Sign in with GitHub
+                                </a>
+
+                                <a class="btn btn-social btn-facebook" href="{{ route('social.login', ['provider' => 'facebook']) }}">
+                                    <img src="{{asset('icons/facebook.png')}}" alt="#">Sign in with Facebook
+                                </a>
+
+                                <a class="btn btn-social btn-google" href="{{ route('social.login', ['provider' => 'google']) }}">
+                                    <span class="fa fa-google"><img src="{{asset('icons/google.png')}}" alt="#"></span>Sign in with Google
+                                </a>
+
+
                             </div>
                         </div>
                     </form>

@@ -86,8 +86,23 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <span class="login-options">or</span>
+                                <hr>
+
+                                <a class="btn btn-social btn-github" href="{{ route('social.login', ['provider' => 'github']) }}">
+                                    <i class="fa fa-github"><img src="{{asset('icons/github.png')}}" alt="#"></i>Register with GitHub
+                                </a>
+
+                                <a class="btn btn-social btn-facebook" href="{{ route('social.login', ['provider' => 'facebook']) }}">
+                                    <img src="{{asset('icons/facebook.png')}}" alt="#">Register with Facebook
+                                </a>
+
+                                <a class="btn btn-social btn-google" href="{{ route('social.login', ['provider' => 'google']) }}">
+                                    <span class="fa fa-google"><img src="{{asset('icons/google.png')}}" alt="#"></span>Register with Google
+                                </a>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
