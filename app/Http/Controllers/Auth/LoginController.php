@@ -52,8 +52,12 @@ class LoginController extends Controller
     {
         $providerUser = Socialite::driver($provider)->user();
 
+        $nickname = $providerUser->getEmail();
+        $nickname = explode('@', $nickname);
+        $nickname = str_replace('.', '', str_replace('-', '', str_replace('_', '', $nickname[0])));
+
         $user = User::firstOrCreate(['email' => $providerUser->getEmail()], [
-            'username' => $providerUser->getNickname() ?? $providerUser->getName(),
+            'username' => $providerUser->getNickname() ?? $nickname,
             'name' => $providerUser->getName() ?? $providerUser->getNickname(),
             'provider_id' => $providerUser->getId(),
             'provider' => $provider,

@@ -15,7 +15,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                <input id="email" type="text" class="form-control @error('username') is-invalid @enderror" name="username"  required autocomplete="username" autofocus>
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -27,10 +27,15 @@
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
+                            <div class="col-md-6 form-group input-group">
+                                <input id="password" type="password" class="form-control  @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <a href="#" class="text-dark" id="icon-click">
+                                            <i class="far fa-eye" id="icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -43,7 +48,6 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
@@ -67,17 +71,16 @@
                                 <hr>
 
                                 <a class="btn btn-social btn-github" href="{{ route('social.login', ['provider' => 'github']) }}">
-                                    <i class="fa fa-github"><img src="{{asset('icons/github.png')}}" alt="#"></i>Sign in with GitHub
+                                    <i class="fa fa-github"></i>Sign in with GitHub
                                 </a>
 
                                 <a class="btn btn-social btn-facebook" href="{{ route('social.login', ['provider' => 'facebook']) }}">
-                                    <img src="{{asset('icons/facebook.png')}}" alt="#">Sign in with Facebook
+                                    <span class="fa fa-facebook"></span>Sign in with Facebook
                                 </a>
 
                                 <a class="btn btn-social btn-google" href="{{ route('social.login', ['provider' => 'google']) }}">
-                                    <span class="fa fa-google"><img src="{{asset('icons/google.png')}}" alt="#"></span>Sign in with Google
+                                    <span class="fa fa-google"></span>Sign in with Google
                                 </a>
-
 
                             </div>
                         </div>
